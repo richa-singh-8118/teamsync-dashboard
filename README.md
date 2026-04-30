@@ -10,6 +10,9 @@ The goal was to design and implement a full-stack application that demonstrates 
 
 A production-ready full-stack application designed to streamline team workflows.
 
+## 🔗 Live Demo
+**[https://teamsync-dashboard-production-03ef.up.railway.app](https://teamsync-dashboard-production-03ef.up.railway.app)**
+
 ## 🚀 Features
 
 - **Role-Based Access Control**: Secure JWT-based authentication for `admin` and `member` roles.
@@ -80,7 +83,7 @@ The application is configured for a **unified deployment**, meaning a single Rai
     - `JWT_SECRET`: (A secure random string)
     - `ADMIN_SECRET_KEY`: `admin123`
     - `NODE_ENV`: `production`
-5.  **Build & Go Live**: Railway will automatically run `npm run build` (which builds the frontend) and `npm start` (which starts the backend).
+5.  **Build & Go Live**: Railway will automatically use the `Dockerfile` in the root to build and deploy.
 
 Your app will be live at the public domain provided by Railway!
 
