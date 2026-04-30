@@ -67,24 +67,22 @@ Navigate to `http://localhost:5173` in your browser.
 
 ---
 
-## 📦 Deployment Guide (Railway)
+## 📦 Deployment Guide (Railway - Unified)
 
-### Backend Deployment
-1. Go to [Railway.app](https://railway.app/) and create a new project.
-2. Select **Provision MongoDB** to get a managed database.
-3. Select **Deploy from GitHub repo** and point it to your repository.
-4. In the Railway dashboard, go to the Backend service **Variables** tab and add:
-   - `PORT`: `5000`
-   - `MONGO_URI`: *(Copy from your Railway MongoDB instance)*
-   - `JWT_SECRET`: *(A secure random string)*
-5. Railway will automatically detect `package.json` and start the server using `npm start`.
+The application is configured for a **unified deployment**, meaning a single Railway service builds both the frontend and backend and serves them from the same domain.
 
-### Frontend Deployment
-1. In `frontend/src/api/axios.js`, update the `baseURL` to point to your live Railway backend URL.
-2. Go to Railway and add a new service: **Deploy from GitHub repo**.
-3. Set the Root Directory to `/frontend`.
-4. Railway will automatically detect it as a Vite React app and build it.
-5. Generate a public domain for the frontend service.
+### Deployment Steps
+1.  **Push to GitHub**: The changes are already optimized and pushed to your repository.
+2.  **Create Railway Project**: Go to [Railway.app](https://railway.app/) and select **Deploy from GitHub repo**.
+3.  **Provision MongoDB**: Add a MongoDB service to your Railway project.
+4.  **Configure Variables**: In your application service settings, add:
+    - `MONGO_URI`: (Automatically linked from MongoDB service)
+    - `JWT_SECRET`: (A secure random string)
+    - `ADMIN_SECRET_KEY`: `admin123`
+    - `NODE_ENV`: `production`
+5.  **Build & Go Live**: Railway will automatically run `npm run build` (which builds the frontend) and `npm start` (which starts the backend).
+
+Your app will be live at the public domain provided by Railway!
 
 ---
 
