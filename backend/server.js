@@ -29,7 +29,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Static files & "Live" fallback
-const distPath = path.resolve(__dirname, 'dist');
+const distPath = path.resolve(__dirname, '../frontend/dist');
 if (fs.existsSync(distPath)) {
   app.use(express.static(distPath));
   
@@ -47,10 +47,9 @@ app.use((err, req, res, next) => {
 
 // Database connection
 mongoose.connect(process.env.MONGO_URI || process.env.MONGODB_URI)
-  .then(() => {
-    console.log('Connected to MongoDB');
-    app.listen(PORT, () => {
-      console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
-    });
-  })
+  .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('MongoDB connection error:', err));
+
+app.listen(PORT, () => {
+  console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
+});
