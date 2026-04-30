@@ -45,6 +45,7 @@ Create a `.env` file in the `backend` directory:
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_super_secret_jwt_key
+ADMIN_SECRET_KEY=admin123
 ```
 
 ### 3. Run the application
