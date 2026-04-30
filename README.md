@@ -1,6 +1,11 @@
 # TeamSync - Team Task Manager
 
-A production-ready full-stack application designed to streamline team workflows. It features a complete task lifecycle management system where Admins can assign projects/tasks, and Members can update progress, log updates, and submit completed work.
+> **Project Assessment for Ethara AI**  
+> *Ethara AI is a leading AI and data services company in India, specializing in building high-quality, domain-specific datasets for Large Language Model (LLM) fine-tuning. This project bridges the gap between academic learning and real-world AI applications.*
+
+---
+
+A production-ready full-stack application designed to streamline team workflows.
 
 ## 🚀 Features
 
