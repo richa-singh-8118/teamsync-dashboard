@@ -1,0 +1,102 @@
+# TeamSync - Team Task Manager
+
+A production-ready full-stack application designed to streamline team workflows. It features a complete task lifecycle management system where Admins can assign projects/tasks, and Members can update progress, log updates, and submit completed work.
+
+## 🚀 Features
+
+- **Role-Based Access Control**: Secure JWT-based authentication for `admin` and `member` roles.
+- **Project Management**: Admins can create projects and assign members.
+- **Task Lifecycle Workflows**: Tasks progress through `todo` → `in-progress` → `completed` → `submitted`.
+- **Dynamic Dashboard**: Real-time server-side calculation of total tasks, completed tasks, in-progress tasks, and overdue tasks.
+- **Updates & Logs System**: Members can add daily progress updates with automatic timestamps.
+- **Submission Workflow**: Members can submit completed work along with external links and notes for Admin review.
+- **Modern Clean UI**: A beautiful, responsive, "Apple-style" light mode interface built with React.
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:** React (Vite), CSS3 (Custom Variables), Lucide React (Icons), Axios, React Router Dom
+**Backend:** Node.js, Express.js, MongoDB (Mongoose), JSON Web Tokens (JWT), bcryptjs
+
+---
+
+## 💻 Local Development Setup
+
+### 1. Clone the repository and install dependencies
+```bash
+# Install backend dependencies
+cd backend
+npm install
+
+# Install frontend dependencies
+cd ../frontend
+npm install
+```
+
+### 2. Configure Environment Variables
+Create a `.env` file in the `backend` directory:
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_super_secret_jwt_key
+```
+
+### 3. Run the application
+Start the backend server:
+```bash
+cd backend
+npm run dev
+```
+
+Start the frontend application:
+```bash
+cd frontend
+npm run dev
+```
+Navigate to `http://localhost:5173` in your browser.
+
+---
+
+## 📦 Deployment Guide (Railway)
+
+### Backend Deployment
+1. Go to [Railway.app](https://railway.app/) and create a new project.
+2. Select **Provision MongoDB** to get a managed database.
+3. Select **Deploy from GitHub repo** and point it to your repository.
+4. In the Railway dashboard, go to the Backend service **Variables** tab and add:
+   - `PORT`: `5000`
+   - `MONGO_URI`: *(Copy from your Railway MongoDB instance)*
+   - `JWT_SECRET`: *(A secure random string)*
+5. Railway will automatically detect `package.json` and start the server using `npm start`.
+
+### Frontend Deployment
+1. In `frontend/src/api/axios.js`, update the `baseURL` to point to your live Railway backend URL.
+2. Go to Railway and add a new service: **Deploy from GitHub repo**.
+3. Set the Root Directory to `/frontend`.
+4. Railway will automatically detect it as a Vite React app and build it.
+5. Generate a public domain for the frontend service.
+
+---
+
+## 🔌 API Endpoints Reference
+
+### Authentication
+- `POST /api/auth/signup` - Register a new user
+- `POST /api/auth/login` - Authenticate user & get JWT
+- `GET /api/auth/users` - Get list of users (Admin only)
+
+### Dashboard
+- `GET /api/dashboard` - Get dynamic metrics (Total Projects, Tasks, In Progress, Overdue)
+
+### Projects
+- `GET /api/projects` - Get projects assigned to user / created by admin
+- `POST /api/projects` - Create a new project
+- `DELETE /api/projects/:id` - Delete a project
+
+### Tasks
+- `GET /api/tasks` - Get all tasks associated with user
+- `POST /api/tasks` - Create and assign a task
+- `PUT /api/tasks/:id` - Update status and progress slider
+- `POST /api/tasks/:id/update` - Add a text log/comment
+- `POST /api/tasks/:id/submit` - Mark as submitted with link/notes
