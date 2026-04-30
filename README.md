@@ -1,7 +1,10 @@
 # TeamSync - Team Task Manager
 
-> **Project Assessment for Ethara AI**  
-> *Ethara AI is a leading AI and data services company in India, specializing in building high-quality, domain-specific datasets for Large Language Model (LLM) fine-tuning. This project bridges the gap between academic learning and real-world AI applications.*
+## 📌 Project Context
+
+This project was developed as part of a technical assessment for Ethara AI, a company focused on building high-quality data systems for AI and LLM workflows.
+
+The goal was to design and implement a full-stack application that demonstrates structured thinking, task management workflows, and real-world system design.
 
 ---
 
