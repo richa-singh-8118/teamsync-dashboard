@@ -9,6 +9,7 @@
 > ### **Admin Login**
 > - **Email:** `admin@test.com`
 > - **Password:** `123456`
+> - **Admin Secret Key:** `admin123`
 >
 > ### **Member Login**
 > - **Email:** `member@test.com`
