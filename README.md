@@ -1,5 +1,21 @@
 # TeamSync - Team Task Manager
 
+## 🌐 **[LIVE DEMO: Click Here to View Application](https://teamsync-dashboard-production-03ef.up.railway.app)**
+
+---
+
+## 🧪 **DEMO CREDENTIALS (VERY IMPORTANT)**
+
+> ### **Admin Login**
+> - **Email:** `admin@test.com`
+> - **Password:** `123456`
+>
+> ### **Member Login**
+> - **Email:** `member@test.com`
+> - **Password:** `123456`
+
+---
+
 ## 📌 Project Context
 
 This project was developed as part of a technical assessment for Ethara AI, a company focused on building high-quality data systems for AI and LLM workflows.
@@ -10,8 +26,6 @@ The goal was to design and implement a full-stack application that demonstrates 
 
 A production-ready full-stack application designed to streamline team workflows.
 
-## 🔗 Live Demo
-**[https://teamsync-dashboard-production-03ef.up.railway.app](https://teamsync-dashboard-production-03ef.up.railway.app)**
 
 ## 🚀 Features
 
